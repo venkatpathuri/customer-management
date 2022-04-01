@@ -1,0 +1,27 @@
+<br>
+<div class="form col-xs-12 col-md-6 col-md-offset-4">
+    <div class="aler alert-danger" *ngIf="error"><p>{{error}}</p></div>
+    <div class="form-group">
+
+        <form #authform="ngForm" (ngSubmit)="loginUser(authform)">
+            <div class="form-group">
+                <label for="exampleInputEmail1">Email address</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                    placeholder="Enter email" name="email" email required ngModel>
+                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
+                    else.</small>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Password</label>
+                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password"
+                    name="password" required ngModel>
+            </div>
+            <br>
+            <button type="submit" class="btn btn-primary" [disabled]="!authform.valid"> {{isLoginMode ? 'Login' : 'Sign
+                Up'}}</button>
+            |
+            <button type="button" class="btn btn-primary" (click)="sendToLogin()">Switch to {{isLoginMode ? ' Sign Up' :
+                'Login'}}</button>
+        </form>
+    </div>
+</div>

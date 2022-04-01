@@ -1,0 +1,56 @@
+
+<br><br>
+<div id="sect1"class="container">
+<div class="row">
+    <div class="col-sm-6">
+        <div class="card">
+            <div class="card-body" style="color: green;">
+                <h5 class="card-title">New customers</h5>
+                <p class="card-text">
+
+                    {{newcount}}
+                </p>
+
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6">
+        <div class="card">
+            <div class="card-body" style="color: red;">
+                <h5 class="card-title">Total customers</h5>
+                <div></div>
+                <p class="card-text"></p>
+                {{count}}
+            </div>
+        </div>
+    </div>
+</div>
+<br><br>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">s.no</th>
+            <th scope="col">First name</th>
+            <th scope="col">Last name</th>
+            <th scope="col">Email</th>
+    
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let user of obj;let i=index">
+
+            <td>
+                {{i+1}}
+            </td>
+            <td>
+                {{user.fname}}
+            </td>
+            <td> {{user.lname}}</td>
+            <td> {{user.email}}</td>
+            <!-- <td> <button type="button" (click)="EditUser(i)" class="btn btn-primary">Edit</button></td>
+            <td> <button type="button" (click)="deleteUser(i)" class="btn btn-danger">Delete</button></td> -->
+        </tr>
+    </tbody>
+</table>
+</div>

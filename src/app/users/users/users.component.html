@@ -1,0 +1,29 @@
+<br>
+<button class="btn btn-success" (click)="navigate()">Add user</button>
+<br><br>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">s.no</th>
+            <th scope="col">First name</th>
+            <th scope="col">Last name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let user of users;let i=index" >
+          
+            <td>
+                {{i+1}} 
+            </td>
+            <td>
+                {{user.fname}}
+            </td>
+            <td> {{user.lname}}</td>
+            <td> {{user.email}}</td>
+            <td> <button type="button"  class="btn btn-primary" (click)="editUser(i)">Edit</button></td>
+            <td> <button type="button" class="btn btn-danger" (click)=deleteUser(i) >Delete</button></td>
+        </tr>
+    </tbody>
+</table>
